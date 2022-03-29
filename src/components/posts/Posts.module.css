@@ -1,0 +1,9 @@
+.wrapper {
+  width: 350px;
+}
+
+.content {
+  text-align: center;
+  /* margin: 10px; */
+  list-style: none;
+}

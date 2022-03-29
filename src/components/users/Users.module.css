@@ -1,0 +1,40 @@
+.container {
+  background-image: url(../../assets/images/img1.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 240px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 10px;
+  width: 250px;
+  transition: 1s;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 0.5;
+}
+
+.content {
+  padding: 15px;
+  font-weight: 500;
+}
+
+.content span {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+}
