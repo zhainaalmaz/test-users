@@ -2,7 +2,6 @@ import './App.css';
 import Header from './components/Header';
 import Users from './components/users/Users';
 import React from 'react';
-// import Posts from './components/Posts';
 import Card from './ui/card/Card';
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
       <Card>
         <Header />
         <Users />
-        {/* <Posts /> */}
       </Card>
     </div>
   );

@@ -1,40 +1,39 @@
 import classes from './Modal.module.css';
+import ReactDOM from 'react-dom';
 import { createPortal } from 'react-dom';
 import Posts from '../../components/posts/Posts';
 import { ReactComponent as MarkedIcon } from '../../assets/icons/marked.svg';
-import img from '../../assets/images/img1.png';
 
-const Backdrop = (props) => {
-  return <div className={classes.backdrop} onClick={props.onCloseCart} />;
+const Backdrop = ({ onClose }) => {
+  return <div className={classes.backdrop} onClick={onClose} />;
 };
 
-const ModalOverlay = ({ active, setActive }) => {
+const ModalOverlay = ({ onClose, user }) => {
   return (
-    <>
-      <div className={classes.modal} onClick={() => setActive(false)}>
-        <MarkedIcon />
-        <div>
-          <h1>3 актуальных поста Moriah.Stanton</h1>
-          <Posts />
-        </div>
+    <div className={classes.modal}>
+      <MarkedIcon />
+      <div className={classes.title}>
+        <h1>3 актуальных поста {user}</h1>
+        <Posts />
       </div>
-    </>
+      <button className={classes.btn} onClick={onClose}>
+        X
+      </button>
+    </div>
   );
 };
 
-const portalElement = document.getElementById('overlays');
-
-const Modal = (props) => {
+const Modal = ({ children }) => {
   return (
     <>
-      {createPortal(
-        <Backdrop onCloseCart={props.onCloseCart} />,
-        portalElement
+      {ReactDOM.createPortal(
+        <Backdrop />,
+        document.getElementById('backdrop-root')
       )}
 
       {createPortal(
-        <ModalOverlay>{props.children} </ModalOverlay>,
-        portalElement
+        <ModalOverlay>{children} </ModalOverlay>,
+        document.getElementById('overlays')
       )}
     </>
   );

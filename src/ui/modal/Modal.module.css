@@ -1,35 +1,46 @@
 .backdrop {
   position: fixed;
   top: 0;
+  width: 100%;
   height: 100vh;
-  z-index: 20;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.479);
 }
 
 .modal {
   display: flex;
-  background-image: url(../../assets/images/img1.png);
-  background-position: left bottom;
-  background-repeat: no-repeat;
-  background-size: 100px;
   position: absolute;
-  top: 20%;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: 100px;
   background-color: white;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
+  padding: 5px;
 }
 
 .content {
   display: flex;
-  margin-left: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.btn {
+  height: 20px;
+  background: none;
+  border: none;
+  margin: 15px;
 }
 
 @media (min-width: 768px) {
   .modal {
-    width: 40rem;
-    left: calc(50% - 20rem);
+    width: 35rem;
+    left: calc(50% - 17rem);
   }
 }
 @keyframes slide-down {

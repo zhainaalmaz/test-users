@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import classes from './Posts.module.css';
+
 const Posts = () => {
   const [posts, setPosts] = useState([]);
 
@@ -26,7 +27,6 @@ const Posts = () => {
           arr[randomIndexes.c],
         ];
         console.log(datchik);
-        // setPosts(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -38,7 +38,7 @@ const Posts = () => {
       <ul className={classes.wrapper}>
         {posts.map((post) => (
           <li key={post.id} className={classes.content}>
-            <h5> {post.title}</h5>
+            <h5>{post.title}</h5>
             {post.body}
           </li>
         ))}

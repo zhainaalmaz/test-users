@@ -1,8 +1,21 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
 body {
+  min-height: 100vh;
+  line-height: 1;
   margin: 0;
+  font-size: 14px;
   font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  list-style: none;
 }
 
 code {
