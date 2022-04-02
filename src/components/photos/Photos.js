@@ -50,9 +50,7 @@ const Photos = ({ users, user }) => {
 
   return (
     <>
-      <div>
-        <img width="300px" src={user.photo} alt="/" />
-      </div>
+      <img width="300px" src={user.photo} alt="/" />
     </>
   );
 };

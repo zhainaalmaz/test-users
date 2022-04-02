@@ -9,7 +9,6 @@ const Posts = () => {
     axios
       .get(`https://jsonplaceholder.typicode.com/posts`)
       .then((res) => {
-        console.log(res.data);
         let arr = res.data;
         let randomIndexes = {
           a: Math.round(Math.random() * arr.length),

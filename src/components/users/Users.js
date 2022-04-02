@@ -4,15 +4,14 @@ import { ReactComponent as ArrowLeft } from '../../assets/icons/arrow1.svg';
 import { ReactComponent as ArrowRight } from '../../assets/icons/arrow2.svg';
 import classes from './Users.module.css';
 import styled from 'styled-components';
-
 import Modal from '../../ui/modal/Modal';
 import Photos from '../photos/Photos';
 
-const StyledArrowLeft = styled(ArrowLeft)`
+const StyledPrevButton = styled(ArrowLeft)`
   margin: 5px;
 `;
 
-const StyledArrowRight = styled(ArrowRight)`
+const StyledNextButton = styled(ArrowRight)`
   margin: 5px;
 `;
 
@@ -38,7 +37,6 @@ const Users = () => {
 
   const showHandler = (name) => {
     if (name) setSelectedName(name);
-
     setModalActive((prevState) => !prevState);
   };
 
@@ -55,28 +53,26 @@ const Users = () => {
   };
 
   return (
-    <section>
-      <div className={classes.container}>
-        <StyledArrowLeft onClick={prevSlide} />
-        <StyledArrowRight onClick={nextSlide} />
-        <div className={classes.wrapper}>
-          {users.map((user) => (
-            <div
-              key={user.id}
-              className={classes.card}
-              onClick={() => showHandler(user.name)}
-            >
-              <div className={classes.content}>
-                <Photos user={user} users={users} />
-                <span>{user.name}</span>
-                <p>{user.company.name}</p>
-                <p>Website : {user.website}</p>
-              </div>
+    <section className={classes.container}>
+      <StyledPrevButton onClick={prevSlide} />
+      <StyledNextButton onClick={nextSlide} />
+      <div className={classes.wrapper}>
+        {users.map((user) => (
+          <div
+            key={user.id}
+            className={classes.card}
+            onClick={() => showHandler(user.name)}
+          >
+            <div className={classes.content}>
+              <Photos user={user} users={users} />
+              <span>{user.name}</span>
+              <p>{user.company.name}</p>
+              <p>Website : {user.website}</p>
             </div>
-          ))}
+          </div>
+        ))}
 
-          {modalActive && <Modal onClose={showHandler} name={selectedName} />}
-        </div>
+        {modalActive && <Modal onClose={showHandler} name={selectedName} />}
       </div>
     </section>
   );

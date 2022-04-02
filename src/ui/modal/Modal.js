@@ -1,8 +1,8 @@
-import classes from './Modal.module.css';
 import ReactDOM from 'react-dom';
 import { createPortal } from 'react-dom';
-import Posts from '../../components/posts/Posts';
 import { ReactComponent as MarkedIcon } from '../../assets/icons/marked.svg';
+import Posts from '../../components/posts/Posts';
+import classes from './Modal.module.css';
 
 const Backdrop = ({ onClose }) => {
   return <div className={classes.backdrop} onClick={onClose} />;
