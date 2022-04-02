@@ -21,12 +21,6 @@ const Posts = () => {
           arr[randomIndexes.b],
           arr[randomIndexes.c],
         ]);
-        // let datchik = [
-        //   arr[randomIndexes.a],
-        //   arr[randomIndexes.b],
-        //   arr[randomIndexes.c],
-        // ];
-        // console.log(datchik);
       })
       .catch((err) => {
         console.log(err);
