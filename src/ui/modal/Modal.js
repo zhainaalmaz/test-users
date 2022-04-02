@@ -8,31 +8,29 @@ const Backdrop = ({ onClose }) => {
   return <div className={classes.backdrop} onClick={onClose} />;
 };
 
-const ModalOverlay = ({ onClose, user }) => {
+const ModalOverlay = ({ name }) => {
   return (
     <div className={classes.modal}>
       <MarkedIcon />
       <div className={classes.title}>
-        <h1>3 актуальных поста {user}</h1>
+        <h1>3 актуальных поста {name}</h1>
         <Posts />
       </div>
-      <button className={classes.btn} onClick={onClose}>
-        X
-      </button>
+      <MarkedIcon />
     </div>
   );
 };
 
-const Modal = ({ children }) => {
+const Modal = ({ children, name, onClose }) => {
   return (
     <>
       {ReactDOM.createPortal(
-        <Backdrop />,
+        <Backdrop onClose={onClose} />,
         document.getElementById('backdrop-root')
       )}
 
       {createPortal(
-        <ModalOverlay>{children} </ModalOverlay>,
+        <ModalOverlay name={name}>{children} </ModalOverlay>,
         document.getElementById('overlays')
       )}
     </>

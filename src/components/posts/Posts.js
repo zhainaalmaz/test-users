@@ -21,12 +21,12 @@ const Posts = () => {
           arr[randomIndexes.b],
           arr[randomIndexes.c],
         ]);
-        let datchik = [
-          arr[randomIndexes.a],
-          arr[randomIndexes.b],
-          arr[randomIndexes.c],
-        ];
-        console.log(datchik);
+        // let datchik = [
+        //   arr[randomIndexes.a],
+        //   arr[randomIndexes.b],
+        //   arr[randomIndexes.c],
+        // ];
+        // console.log(datchik);
       })
       .catch((err) => {
         console.log(err);
@@ -39,7 +39,7 @@ const Posts = () => {
         {posts.map((post) => (
           <li key={post.id} className={classes.content}>
             <h5>{post.title}</h5>
-            {post.body}
+            <p>{post.body}</p>
           </li>
         ))}
       </ul>
